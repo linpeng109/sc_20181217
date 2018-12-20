@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class HelloInfo {
-    @Value("${spring.application.APPLICATION_NAME}")
+    @Value("${spring.application.name}")
     private String APPLICATION_NAME;
 
-    @Value("${server.PORT}")
+    @Value("${server.port}")
     private String PORT;
 
-    @Value("${my.APPLICATION_NAME}")
+    @Value("${my.name}")
     private String MY_NAME;
 
     @RequestMapping("/")

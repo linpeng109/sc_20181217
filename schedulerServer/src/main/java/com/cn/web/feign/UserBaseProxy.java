@@ -8,6 +8,6 @@ import java.util.List;
 
 @FeignClient(name = "userBaseProxy", url = "http://localhost:8081")
 public interface UserBaseProxy {
-    @RequestMapping("/findall/{page}/{size}")
-    public List findall(@PathVariable("page") int page, @PathVariable("size") int size);
+    @RequestMapping("/userbaseinfo/findall/{page}/{size}")
+    public List findAll(@PathVariable("page") int page, @PathVariable("size") int size);
 }
