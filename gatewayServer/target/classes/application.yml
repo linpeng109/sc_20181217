@@ -1,0 +1,42 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: GatewayServer
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: userbaseserver
+        uri: lb://USERBASESERVER
+        predicates:
+        - Path=/user/**
+        filters:
+        - StripPrefix=1
+  boot:
+    admin:
+      client:
+        enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defualtZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+logging:
+  level:
+    root: error
+    com.cn: debug
