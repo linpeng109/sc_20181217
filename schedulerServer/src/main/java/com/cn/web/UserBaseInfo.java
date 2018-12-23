@@ -1,6 +1,6 @@
 package com.cn.web;
 
-import com.cn.web.feign.UserBaseProxy;
+import com.cn.feign.UserBaseProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,7 @@ public class UserBaseInfo {
     public UserBaseProxy userBaseProxy;
 
     @RequestMapping("/findall/{page}/{size}")
-    public List findAll(@PathVariable("page") int page, @PathVariable("size") int size) {
+    public String findAll(@PathVariable("page") int page, @PathVariable("size") int size) {
         return userBaseProxy.findAll(page, size);
     }
 }
