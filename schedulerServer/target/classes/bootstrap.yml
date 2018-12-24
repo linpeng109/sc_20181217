@@ -5,14 +5,14 @@ spring:
     name: SchedulerServer
   profiles:
     active: pro
-  devtools:
-    add-properties: false
-    restart:
-      enabled: true
   boot:
     admin:
       client:
         enabled: true
+  devtools:
+    add-properties: false
+    restart:
+      enabled: true
   cloud:
     config:
       enabled: true

@@ -1,7 +1,5 @@
-#server
 server:
   port: 8081
-#spring
 spring:
   application:
     name: UserbaseServer
@@ -30,14 +28,12 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888/
-#eureka
 eureka:
-  fetch-registry: true
-  register-with-eureka: true
   client:
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-#management
 management:
   endpoints:
     web:
@@ -48,7 +44,6 @@ management:
       enabled: true
     health:
       show-details: always
-#lombok
 logging:
   level:
     root: error

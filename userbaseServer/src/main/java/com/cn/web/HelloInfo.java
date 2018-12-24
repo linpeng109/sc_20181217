@@ -1,8 +1,10 @@
 package com.cn.web;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,7 +19,8 @@ public class HelloInfo {
     @Value("${my.name}")
     private String MY_NAME;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @ApiOperation(value = "hello函数",notes = "测试配置服务器功能")
     public String hello() {
         return "The "
                 + SPRING_APPLICATION_NAME
