@@ -1,10 +1,10 @@
 server:
-  port: 8082
+  port: 8900
 spring:
   application:
-    name: SchedulerServer
+    name: SecurityServer
   profiles:
-    active: pro
+    active: native
   boot:
     admin:
       client:
@@ -13,18 +13,16 @@ spring:
     add-properties: false
     restart:
       enabled: true
-  cloud:
-    config:
-      enabled: true
-      discovery:
-        service-id: ConfigServer
-        enabled: true
   main:
     allow-bean-definition-overriding: true
+  security:
+    user:
+      name: abcd
+      password: abcd
 eureka:
   client:
-    register-with-eureka: true
     fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
 management:
@@ -33,10 +31,10 @@ management:
       exposure:
         include: '*'
   endpoint:
-    shutdown:
-      enabled: true
     health:
       show-details: always
+    shutdown:
+      enabled: true
 logging:
   level:
     root: error
