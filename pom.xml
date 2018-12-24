@@ -15,6 +15,7 @@
         <module>adminServer</module>
         <module>userbaseServer</module>
         <module>schedulerServer</module>
+        <module>securityServer</module>
     </modules>
 
     <name>sc_20181217</name>
