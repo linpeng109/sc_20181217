@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 @Configuration
 @EnableScheduling
@@ -17,12 +18,11 @@ import java.util.Date;
 @Component
 public class SchedulerTask {
     @Autowired
-    private UserBaseProxy userBaseProxy;
+    protected UserBaseProxy userBaseProxy;
 
     private String currentTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        String currentDate = dateFormat.format(new Date());
-        return currentDate;
+        return dateFormat.format(new Date());
     }
 
     @Scheduled(fixedRate = 5 * 1000)
@@ -33,6 +33,8 @@ public class SchedulerTask {
     @Scheduled(cron = "0 */1 * * * *")
     public void reportCurrentTimeByCron() {
         log.debug("Cron mode. Per minutes " + currentTime());
-        log.debug(userBaseProxy.findAll(1, 1));
+        int page = new Random().nextInt(100);
+        int size = new Random().nextInt(18);
+        log.debug(userBaseProxy.findAll(page, size));
     }
 }

@@ -9,10 +9,15 @@ spring:
     add-properties: false
     restart:
       enabled: true
+    livereload:
+      enabled: true
+      port: 35729
   boot:
     admin:
       client:
         enabled: true
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   server:
     peer-node-read-timeout-ms: 1000

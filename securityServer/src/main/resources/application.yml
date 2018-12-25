@@ -13,6 +13,9 @@ spring:
     add-properties: false
     restart:
       enabled: true
+    livereload:
+      enabled: true
+      port: 35729
   main:
     allow-bean-definition-overriding: true
   security:
@@ -20,7 +23,13 @@ spring:
       name: abcd
       password: abcd
       roles: admin
+    oauth2:
+      resourceserver:
+        jwt:
+          jws-algorithm: RS256
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true

@@ -25,6 +25,9 @@ spring:
     restart:
       enabled: true
     add-properties: false
+    livereload:
+      enabled: true
+      port: 35729
   cloud:
     config:
       uri: http://localhost:8888/
