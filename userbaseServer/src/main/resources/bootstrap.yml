@@ -30,7 +30,10 @@ spring:
       port: 35729
   cloud:
     config:
+      name: UserbaseServer
       uri: http://localhost:8888/
+      profile: dev
+      label: master
 eureka:
   client:
     fetch-registry: true
