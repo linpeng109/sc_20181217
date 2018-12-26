@@ -18,10 +18,11 @@ spring:
       port: 35729
   cloud:
     config:
-      enabled: true
+      name: SchedulerServer
+      profile: pro
+      label: master
       discovery:
-        service-id: ConfigServer
-        enabled: true
+        service-id: CONFIGSERVER
   main:
     allow-bean-definition-overriding: true
 eureka:

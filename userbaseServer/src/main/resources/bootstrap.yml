@@ -31,9 +31,10 @@ spring:
   cloud:
     config:
       name: UserbaseServer
-      uri: http://localhost:8888/
       profile: dev
       label: master
+      discovery:
+        service-id: CONFIGSERVER
 eureka:
   client:
     fetch-registry: true

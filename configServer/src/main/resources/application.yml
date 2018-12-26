@@ -11,15 +11,13 @@ spring:
     active: native
   cloud:
     config:
+      label: master
       server:
-        #        native:
-        #          search-locations: classpath:/shared
         git:
-          uri: https://github.com/linpeng109/sc_20181217/
+          uri: https://github.com/linpeng109/sc_20181217/tree/master/config-repo
           username: linpeng109
-          password: patient681020
-          search-paths: /shared
-          default-label: master
+          password:
+          search-paths: config-repo
   devtools:
     livereload:
       enabled: true
