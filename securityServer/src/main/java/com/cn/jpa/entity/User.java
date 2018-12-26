@@ -2,6 +2,7 @@ package com.cn.jpa.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
 @Entity
 @GenericGenerator(name = "system-uuid", strategy = "uuid")
 @Table(name = "user")
-public class User implements org.springframework.security.core.userdetails.UserDetails {
+public class User implements UserDetails {
 
     public User() {
     }
