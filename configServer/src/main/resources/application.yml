@@ -11,13 +11,16 @@ spring:
     active: native
   cloud:
     config:
-      label: master
       server:
+        # github
         git:
-          uri: https://github.com/linpeng109/sc_20181217/tree/master/config-repo
+          uri: http://github.com/linpeng109/config-repo
           username: linpeng109
-          password:
-          search-paths: config-repo
+          password: patient681020
+          skip-ssl-validation: true
+        # local
+#        native:
+  #          search-locations: classpath:/shared
   devtools:
     livereload:
       enabled: true
@@ -34,6 +37,9 @@ management:
       enabled: true
     health:
       show-details: always
+  server:
+    servlet:
+      context-path: /admin
 eureka:
   client:
     fetch-registry: true

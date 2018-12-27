@@ -19,8 +19,8 @@ public class HelloInfo {
     @Value("${my.name}")
     private String MY_NAME;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    @ApiOperation(value = "hello函数",notes = "测试配置服务器功能")
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ApiOperation(value = "hello函数", notes = "测试配置服务器功能")
     public String hello() {
         return "The "
                 + SPRING_APPLICATION_NAME
