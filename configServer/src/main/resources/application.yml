@@ -14,10 +14,7 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/linpeng109/sc_20181217/tree/master/config-repo
-          username: linpeng109
-          password:
-          search-paths: config-repo
+          uri: https://github.com/linpeng109/sc_20181217/config-repo
   devtools:
     livereload:
       enabled: true
