@@ -11,10 +11,13 @@ spring:
     active: native
   cloud:
     config:
-      label: master
       server:
+        # github
         git:
-          uri: https://github.com/linpeng109/sc_20181217/config-repo
+          uri: http://github.com/linpeng109/config-repo
+        # local
+  #        native:
+  #          search-locations: classpath:/shared
   devtools:
     livereload:
       enabled: true

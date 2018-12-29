@@ -24,7 +24,6 @@ spring:
   devtools:
     restart:
       enabled: true
-    add-properties: false
     livereload:
       enabled: true
       port: 35729
@@ -32,7 +31,8 @@ spring:
     config:
       name: UserbaseServer
       profile: dev
-      label: master
+#      label: master
+#      uri: http://localhost:8888
       discovery:
         service-id: CONFIGSERVER
 eureka:
