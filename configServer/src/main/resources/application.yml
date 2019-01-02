@@ -15,9 +15,6 @@ spring:
         # github
         git:
           uri: http://github.com/linpeng109/config-repo
-          username: linpeng109
-          password: patient681020
-          skip-ssl-validation: true
         # local
 #        native:
   #          search-locations: classpath:/shared
