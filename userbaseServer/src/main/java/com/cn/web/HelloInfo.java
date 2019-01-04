@@ -3,12 +3,14 @@ package com.cn.web;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Log4j2
+@RefreshScope
 public class HelloInfo {
     @Value("${spring.application.name}")
     private String SPRING_APPLICATION_NAME;
