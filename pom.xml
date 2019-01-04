@@ -16,6 +16,7 @@
         <module>userbaseServer</module>
         <module>schedulerServer</module>
         <module>securityServer</module>
+        <module>amqpServer</module>
     </modules>
 
     <name>sc_20181217</name>

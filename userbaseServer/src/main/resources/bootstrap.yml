@@ -27,12 +27,13 @@ spring:
     livereload:
       enabled: true
       port: 35729
+    add-properties: false
   cloud:
     config:
       name: UserbaseServer
       profile: dev
-#      label: master
-#      uri: http://localhost:8888
+      #      label: master
+      #      uri: http://localhost:8888
       discovery:
         service-id: CONFIGSERVER
 eureka:
