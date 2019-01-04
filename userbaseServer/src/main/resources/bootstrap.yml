@@ -32,8 +32,13 @@ spring:
     config:
       name: UserbaseServer
       profile: dev
+<<<<<<< HEAD
       #      label: master
       #      uri: http://localhost:8888
+=======
+#      label: master
+#      uri: http://localhost:8888
+>>>>>>> 2d2c1bd1dcadcf3aea75b34fbae91833d096fcf0
       discovery:
         service-id: CONFIGSERVER
 eureka:
