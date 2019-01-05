@@ -3,15 +3,11 @@ server:
 spring:
   application:
     name: ConfigServer
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        # github
         git:
           uri: https://github.com/linpeng109/config-repo
-        # local
   #        native:
   #          search-locations: classpath:/shared
   devtools:
@@ -21,11 +17,15 @@ spring:
     restart:
       enabled: true
     add-properties: false
+  boot:
+    admin:
+      client:
+        enabled: true
 management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: "*"
   endpoint:
     shutdown:
       enabled: true
@@ -33,9 +33,9 @@ management:
       show-details: always
 eureka:
   client:
-    fetch-registry: true
-    register-with-eureka: true
     service-url:
+      fetch-registry: true
+      register-with-eureka: true
       defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true

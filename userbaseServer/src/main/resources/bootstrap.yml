@@ -27,14 +27,18 @@ spring:
     livereload:
       enabled: true
       port: 35729
+    add-properties: false
   cloud:
     config:
       name: UserbaseServer
       profile: dev
-#      label: master
-#      uri: http://localhost:8888
       discovery:
         service-id: CONFIGSERVER
+  rabbitmq:
+    host: localhost
+    username: user
+    password: user
+    port: 5672
 eureka:
   client:
     fetch-registry: true

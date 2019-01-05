@@ -1,0 +1,40 @@
+server:
+  port: 8890
+spring:
+  application:
+    name: AmqpServer
+  boot:
+    admin:
+      client:
+        enabled: true
+  profiles:
+    active: native
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+      port: 35729
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: error
+    com.cn: debug
