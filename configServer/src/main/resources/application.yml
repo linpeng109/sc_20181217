@@ -1,10 +1,6 @@
 server:
   port: 8888
 spring:
-  boot:
-    admin:
-      client:
-        enabled: true
   application:
     name: ConfigServer
   profiles:
@@ -14,9 +10,9 @@ spring:
       server:
         # github
         git:
-          uri: http://github.com/linpeng109/config-repo
+          uri: https://github.com/linpeng109/config-repo
         # local
-#        native:
+  #        native:
   #          search-locations: classpath:/shared
   devtools:
     livereload:
@@ -24,6 +20,7 @@ spring:
       port: 35729
     restart:
       enabled: true
+    add-properties: false
 management:
   endpoints:
     web:
@@ -34,9 +31,6 @@ management:
       enabled: true
     health:
       show-details: always
-  server:
-    servlet:
-      context-path: /admin
 eureka:
   client:
     fetch-registry: true
