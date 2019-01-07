@@ -14,7 +14,7 @@ public class HelloInfo {
     @Autowired
     public Sender sender;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         String result = "Hello world,The AmqpServer is running!";
         log.debug(result);

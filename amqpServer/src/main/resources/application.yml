@@ -27,13 +27,12 @@ management:
   endpoints:
     web:
       exposure:
-        exclude: "*"
+        include: "*"
   endpoint:
     shutdown:
       enabled: true
     health:
       show-details: always
-
 logging:
   level:
     root: error
