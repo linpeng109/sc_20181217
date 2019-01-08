@@ -33,7 +33,6 @@ management:
       enabled: true
     health:
       show-details: always
-
 logging:
   level:
     root: error
