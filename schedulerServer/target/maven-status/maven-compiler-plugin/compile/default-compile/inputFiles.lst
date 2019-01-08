@@ -4,3 +4,4 @@ D:\Workspace\sc_20181217\schedulerServer\src\main\java\com\cn\web\HelloInfo.java
 D:\Workspace\sc_20181217\schedulerServer\src\main\java\com\cn\web\UserBaseInfo.java
 D:\Workspace\sc_20181217\schedulerServer\src\main\java\com\cn\web\feign\UserBaseProxy.java
 D:\Workspace\sc_20181217\schedulerServer\src\main\java\com\cn\SchedulerServerApplication.java
+D:\Workspace\sc_20181217\schedulerServer\src\main\java\com\cn\feign\AmqpProxy.java

@@ -20,7 +20,6 @@ spring:
     config:
       name: SchedulerServer
       profile: pro
-      label: master
       discovery:
         service-id: CONFIGSERVER
   main:

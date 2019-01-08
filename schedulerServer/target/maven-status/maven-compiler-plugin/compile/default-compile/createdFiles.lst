@@ -1,2 +1,3 @@
 com\cn\feign\UserBaseProxy.class
 com\cn\web\UserBaseInfo.class
+com\cn\feign\AmqpProxy.class
