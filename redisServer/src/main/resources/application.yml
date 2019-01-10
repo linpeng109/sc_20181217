@@ -1,0 +1,42 @@
+server:
+  port: 8891
+spring:
+  application:
+    name: RedisServer
+  boot:
+    admin:
+      client:
+        enabled: true
+  profiles:
+    active: native
+  devtools:
+    livereload:
+      enabled: true
+      port: 35729
+    restart:
+      enabled: true
+    add-properties: false
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+logging:
+  level:
+    root: debug
+    com.cn: debug

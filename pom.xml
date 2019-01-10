@@ -17,6 +17,7 @@
         <module>schedulerServer</module>
         <module>securityServer</module>
         <module>amqpServer</module>
+        <module>redisServer</module>
     </modules>
 
     <name>sc_20181217</name>
