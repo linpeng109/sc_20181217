@@ -1,5 +1,6 @@
 package com.cn.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,24 +12,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
+    @Autowired
+    public RawPasswordEncoder rawPasswordEncoder;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
-    }
-
-    @Override
-    protected AuthenticationManager authenticationManager() throws Exception {
-        return super.authenticationManager();
-    }
-
-    @Override
-    protected UserDetailsService userDetailsService() {
-        return super.userDetailsService();
-    }
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
+        auth.userDetailsService(userDetailsService())
+                .passwordEncoder(rawPasswordEncoder);
     }
 
     @Override
@@ -38,10 +28,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/token/*", "/user/signup").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .exceptionHandling().authenticationEntryPoint()
-                .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http.addFilter();
-//        super.configure(http);
     }
 }
