@@ -9,6 +9,25 @@ import javax.persistence.*;
 @GenericGenerator(name = "system-uuid", strategy = "uuid")
 @Table(name = "authority")
 public class Role implements GrantedAuthority {
+    public String getAuthorityId() {
+        return authorityId;
+    }
+
+    public void setAuthorityId(String authorityId) {
+        this.authorityId = authorityId;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    public String getAuthorityDescription() {
+        return authorityDescription;
+    }
+
+    public void setAuthorityDescription(String authorityDescription) {
+        this.authorityDescription = authorityDescription;
+    }
 
     @Id
     @GeneratedValue(generator = "system-uuid")

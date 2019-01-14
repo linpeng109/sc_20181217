@@ -1,5 +1,5 @@
+com\cn\feign\RedisProxy.class
 com\cn\feign\UserBaseProxy.class
-com\cn\web\feign\UserBaseProxy.class
 com\cn\web\HelloInfo.class
 com\cn\scheduler\SchedulerTask.class
 com\cn\SchedulerServerApplication.class

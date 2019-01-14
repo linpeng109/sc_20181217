@@ -14,8 +14,6 @@ import java.util.List;
 @Table(name = "user")
 public class User implements UserDetails {
 
-    public User() {
-    }
 
     @Id
     @GeneratedValue(generator = "system-uuid")

@@ -12,9 +12,9 @@ public class RedisInfo {
     @Autowired
     public RedisService redisService;
 
-    @RequestMapping("/set/{key}/{value}")
-    public String set(@PathVariable("key") String key, @PathVariable("value") Object value) {
-        redisService.setValue(key, value);
+    @RequestMapping("/set/{key}/{value}/{seconds}")
+    public String set(@PathVariable("key") String key, @PathVariable("value") Object value, @PathVariable("seconds") long seconds) {
+        redisService.setValue(key, value, seconds);
         return "success";
     }
 
