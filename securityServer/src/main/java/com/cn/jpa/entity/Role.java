@@ -1,33 +1,15 @@
 package com.cn.jpa.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @GenericGenerator(name = "system-uuid", strategy = "uuid")
 @Table(name = "authority")
-public class Role implements GrantedAuthority {
-    public String getAuthorityId() {
-        return authorityId;
-    }
-
-    public void setAuthorityId(String authorityId) {
-        this.authorityId = authorityId;
-    }
-
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
-
-    public String getAuthorityDescription() {
-        return authorityDescription;
-    }
-
-    public void setAuthorityDescription(String authorityDescription) {
-        this.authorityDescription = authorityDescription;
-    }
+public class Role implements org.springframework.security.core.GrantedAuthority {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -39,9 +21,4 @@ public class Role implements GrantedAuthority {
 
     @Column(name = "authorityDescription", length = 100)
     private String authorityDescription;
-
-    @Override
-    public String getAuthority() {
-        return authority;
-    }
 }
