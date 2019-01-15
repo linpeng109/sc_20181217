@@ -21,4 +21,29 @@ public class Role implements org.springframework.security.core.GrantedAuthority 
 
     @Column(name = "authorityDescription", length = 100)
     private String authorityDescription;
+
+    public String getAuthorityId() {
+        return authorityId;
+    }
+
+    public void setAuthorityId(String authorityId) {
+        this.authorityId = authorityId;
+    }
+
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    public String getAuthorityDescription() {
+        return authorityDescription;
+    }
+
+    public void setAuthorityDescription(String authorityDescription) {
+        this.authorityDescription = authorityDescription;
+    }
+
 }
