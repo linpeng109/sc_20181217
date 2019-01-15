@@ -43,6 +43,14 @@ public class User implements org.springframework.security.core.userdetails.UserD
     @Type(type = "java.lang.Boolean")
     private boolean credentialsNonExpired = true;
 
+    @Column(name = "createDate")
+    @Type(type = "java.util.Date")
+    private Date createDate = new Date();
+
+    @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "userId"), inverseJoinColumns = @JoinColumn(name = "authorityId", referencedColumnName = "authorityId"))
+    private List<Role> authorities = new ArrayList<Role>();
+
     public String getUserId() {
         return userId;
     }
@@ -122,11 +130,4 @@ public class User implements org.springframework.security.core.userdetails.UserD
         this.authorities = authorities;
     }
 
-    @Column(name = "createDate")
-    @Type(type = "java.util.Date")
-    private Date createDate = new Date();
-
-    @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "userId"), inverseJoinColumns = @JoinColumn(name = "authorityId", referencedColumnName = "authorityId"))
-    private List<Role> authorities = new ArrayList<Role>();
 }
