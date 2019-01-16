@@ -24,7 +24,7 @@ public class TestInitData {
     @Resource
     protected UserDetailsDao userDetailsDao;
 
-//    @Test
+    //    @Test
     public void testAuthorityInit() {
         Role admin = new Role();
         admin.setAuthority("ROLE_ADMIN");
@@ -44,7 +44,13 @@ public class TestInitData {
         List<Role> authorityList = grantedAuthorityDao.findAll();
         for (int i = 0; i < 1000; ++i) {
             User user = new User();
-            user.setUsername(UUID.randomUUID().toString().substring(16, 24).toUpperCase());
+            String randomStr = UUID.randomUUID()
+                    .toString()
+                    .replaceAll("-", "")
+                    .substring(16, 24)
+                    .toUpperCase();
+            user.setUsername(randomStr);
+            user.setPassword(randomStr);
             user.setAuthorities(authorityList);
             userDetailsDao.saveAndFlush(user);
         }

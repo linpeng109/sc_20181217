@@ -1,6 +1,8 @@
 package com.cn.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
@@ -16,7 +18,14 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     public UserDetailsServer userDetailsServer;
 
     @Resource
-    public JwtAccessTokenConverter jwtAccessTokenConverter;
+    public AuthenticationManager authenticationManagerBean;
+
+    @Bean
+    public JwtAccessTokenConverter jwtAccessTokenConverter() {
+        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+        jwtAccessTokenConverter.setSigningKey("12345");
+        return jwtAccessTokenConverter;
+    }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -31,8 +40,9 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.userDetailsService(userDetailsServer)
-                .accessTokenConverter(jwtAccessTokenConverter);
+        endpoints.authenticationManager(authenticationManagerBean)
+                .userDetailsService(userDetailsServer)
+                .accessTokenConverter(jwtAccessTokenConverter());
     }
 
     @Override

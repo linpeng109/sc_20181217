@@ -18,6 +18,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database: mysql
   devtools:
     add-properties: false
     restart:
@@ -27,7 +28,7 @@ spring:
       port: 35729
   main:
     allow-bean-definition-overriding: true
-  security:
+
     user:
       name: abcd
       password: abcd
