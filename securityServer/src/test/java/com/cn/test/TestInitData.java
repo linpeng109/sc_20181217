@@ -24,7 +24,7 @@ public class TestInitData {
     @Resource
     protected UserDetailsDao userDetailsDao;
 
-    //    @Test
+//    @Test
     public void testAuthorityInit() {
         Role admin = new Role();
         admin.setAuthority("ROLE_ADMIN");

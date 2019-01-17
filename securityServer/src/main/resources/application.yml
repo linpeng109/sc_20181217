@@ -28,7 +28,6 @@ spring:
       port: 35729
   main:
     allow-bean-definition-overriding: true
-
     user:
       name: abcd
       password: abcd
