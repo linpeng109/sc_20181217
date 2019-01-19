@@ -48,7 +48,7 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/hello/**", "/actuator/**").permitAll()
-                .antMatchers("/world/**").hasRole("admin")
+                .antMatchers("/world/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/user/signup").permitAll()
