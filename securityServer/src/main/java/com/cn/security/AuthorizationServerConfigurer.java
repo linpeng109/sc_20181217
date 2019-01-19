@@ -1,5 +1,6 @@
 package com.cn.security;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,12 +9,16 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Resource;
 
 @Configuration
 public class AuthorizationServerConfigurer extends AuthorizationServerConfigurerAdapter {
+
+    @Value("${jwt.signingKey")
+    protected String SIGNINGKEY;
+
     @Resource
     public UserDetailsServer userDetailsServer;
 
@@ -23,7 +28,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        jwtAccessTokenConverter.setSigningKey("12345");
+        jwtAccessTokenConverter.setSigningKey(SIGNINGKEY);
         return jwtAccessTokenConverter;
     }
 
@@ -40,7 +45,8 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManagerBean)
+        endpoints.tokenStore(new JwtTokenStore(jwtAccessTokenConverter()))
+                .authenticationManager(authenticationManagerBean)
                 .userDetailsService(userDetailsServer)
                 .accessTokenConverter(jwtAccessTokenConverter());
     }

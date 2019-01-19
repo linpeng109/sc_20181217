@@ -1,0 +1,38 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: ResourceServer
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+    livereload:
+      port: 35729
+      enabled: true
+  boot:
+    admin:
+      client:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+logging:
+  level:
+    root: error
+    com.cn: debug
+jwt:
+  signingKey: 123456
