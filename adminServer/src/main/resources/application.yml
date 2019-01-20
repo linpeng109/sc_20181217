@@ -5,13 +5,6 @@ spring:
     active: native
   application:
     name: AdminServer
-  devtools:
-    add-properties: false
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-      port: 35729
 eureka:
   client:
     register-with-eureka: true
@@ -19,7 +12,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
-    hostname: localhost
     prefer-ip-address: true
 management:
   endpoints:
@@ -31,6 +23,8 @@ management:
       enabled: true
     health:
       show-details: always
+    restart:
+      enabled: true
 logging:
   level:
     root: error

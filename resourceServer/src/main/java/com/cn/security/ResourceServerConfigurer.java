@@ -49,6 +49,7 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/hello/**", "/actuator/**").permitAll()
                 .antMatchers("/world/**").hasRole("ADMIN")
+                .antMatchers("/linpeng/**").hasRole("USER")
                 .and()
                 .formLogin()
                 .and()

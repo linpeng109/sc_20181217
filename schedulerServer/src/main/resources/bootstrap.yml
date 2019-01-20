@@ -9,13 +9,6 @@ spring:
     admin:
       client:
         enabled: true
-  devtools:
-    add-properties: false
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-      port: 35729
   cloud:
     config:
       name: SchedulerServer
@@ -42,6 +35,8 @@ management:
       enabled: true
     health:
       show-details: always
+    restart:
+      enabled: true
 logging:
   level:
     root: error

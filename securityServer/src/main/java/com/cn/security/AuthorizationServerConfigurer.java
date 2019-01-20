@@ -1,6 +1,5 @@
 package com.cn.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +21,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     @Resource
     public UserDetailsServer userDetailsServer;
 
-    @Autowired
+    @Resource
     public AuthenticationManager authenticationManagerBean;
 
     @Bean
@@ -40,7 +39,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
                 .scopes("server")
                 .authorizedGrantTypes("refresh_token", "password")
                 .accessTokenValiditySeconds(60 * 5)
-                .refreshTokenValiditySeconds(60 * 60 * 24 * 30);
+                .refreshTokenValiditySeconds(60 * 60 * 24 * 15);
     }
 
     @Override

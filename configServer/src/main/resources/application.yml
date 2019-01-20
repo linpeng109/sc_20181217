@@ -10,13 +10,6 @@ spring:
           uri: https://github.com/linpeng109/config-repo
   #        native:
   #          search-locations: classpath:/shared
-  devtools:
-    livereload:
-      enabled: true
-      port: 35729
-    restart:
-      enabled: true
-    add-properties: false
   boot:
     admin:
       client:
@@ -31,6 +24,8 @@ management:
       enabled: true
     health:
       show-details: always
+    restart:
+      enabled: true
 eureka:
   client:
     service-url:

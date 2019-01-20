@@ -10,22 +10,22 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-      - id: userbaseserver
-        uri: lb://USERBASESERVER
-        predicates:
-        - Path=/user/**
-        filters:
-        - StripPrefix=1
+        - id: resourceserver
+          uri: lb://RESOURCESERVER
+          predicates:
+            - Path=/resource/**
+          filters:
+            - StripPrefix=1
+        - id: userbaseserver
+          uri: lb://USERBASESERVER
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
   boot:
     admin:
       client:
         enabled: true
-  devtools:
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-      port: 35729
 eureka:
   client:
     register-with-eureka: true
@@ -43,6 +43,8 @@ management:
     health:
       show-details: always
     shutdown:
+      enabled: true
+    restart:
       enabled: true
 logging:
   level:

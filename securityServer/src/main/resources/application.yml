@@ -15,23 +15,15 @@ spring:
     password: admin
     url: jdbc:mysql://localhost:3306/mysql_security_try?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
   jpa:
+    database: mysql
     hibernate:
       ddl-auto: update
     show-sql: true
-    database: mysql
-  devtools:
-    additional-paths: src/main/java
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-      port: 35729
   main:
     allow-bean-definition-overriding: true
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -46,6 +38,8 @@ management:
     health:
       show-details: always
     shutdown:
+      enabled: true
+    restart:
       enabled: true
 logging:
   level:

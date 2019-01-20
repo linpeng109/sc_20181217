@@ -9,12 +9,6 @@ spring:
         enabled: true
   profiles:
     active: native
-  devtools:
-    restart:
-      enabled: true
-    livereload:
-      enabled: true
-      port: 35729
 eureka:
   instance:
     prefer-ip-address: true
@@ -33,6 +27,8 @@ management:
       enabled: true
     health:
       show-details: always
+    restart:
+      enabled: true
 logging:
   level:
     root: error
