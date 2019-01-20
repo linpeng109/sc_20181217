@@ -32,10 +32,6 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
         return jwtAccessTokenConverter;
     }
 
-//    @Override
-//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        super.configure(clients);
-//    }
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -45,7 +41,6 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
                 .authorizedGrantTypes("refresh_token", "password")
                 .accessTokenValiditySeconds(60 * 5)
                 .refreshTokenValiditySeconds(60 * 60 * 24 * 30);
-//        super.configure(clients);
     }
 
     @Override
