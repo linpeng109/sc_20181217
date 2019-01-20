@@ -51,7 +51,6 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
                 .antMatchers("/world/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
-                .loginPage("/user/signup").permitAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }

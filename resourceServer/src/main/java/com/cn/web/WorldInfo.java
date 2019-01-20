@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorldInfo {
     @RequestMapping("/getworld")
     public String world() {
-        return "Hi I am a World!";
+        return "The token is OK !";
     }
 }

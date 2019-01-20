@@ -20,7 +20,7 @@ spring:
     show-sql: true
     database: mysql
   devtools:
-    add-properties: false
+    additional-paths: src/main/java
     restart:
       enabled: true
     livereload:
@@ -28,10 +28,6 @@ spring:
       port: 35729
   main:
     allow-bean-definition-overriding: true
-    user:
-      name: abcd
-      password: abcd
-      roles: admin
 eureka:
   instance:
     prefer-ip-address: true
