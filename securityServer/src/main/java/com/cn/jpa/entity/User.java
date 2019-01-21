@@ -48,7 +48,9 @@ public class User implements org.springframework.security.core.userdetails.UserD
     private Date createDate = new Date();
 
     @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "userId"), inverseJoinColumns = @JoinColumn(name = "authorityId", referencedColumnName = "authorityId"))
+    @JoinTable(name = "user_authority",
+            joinColumns = @JoinColumn(name = "userId", referencedColumnName = "userId"),
+            inverseJoinColumns = @JoinColumn(name = "authorityId", referencedColumnName = "authorityId"))
     private List<Role> authorities = new ArrayList<Role>();
 
     public String getUserId() {
