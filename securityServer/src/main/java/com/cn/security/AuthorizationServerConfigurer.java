@@ -38,7 +38,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
                 .secret("abcd")
                 .scopes("server")
                 .authorizedGrantTypes("refresh_token", "password")
-                .accessTokenValiditySeconds(60 * 5)
+                .accessTokenValiditySeconds(60 * 60)
                 .refreshTokenValiditySeconds(60 * 60 * 24 * 15);
     }
 

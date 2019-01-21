@@ -16,6 +16,7 @@ spring:
             - Path=/resource/**
           filters:
             - StripPrefix=1
+            - Weight=USERBASESERVER,90
         - id: userbaseserver
           uri: lb://USERBASESERVER
           predicates:
