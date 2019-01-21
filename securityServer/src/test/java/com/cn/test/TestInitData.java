@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,19 +25,50 @@ public class TestInitData {
     @Resource
     protected UserDetailsDao userDetailsDao;
 
-    //    @Test
+    @Test
     public void testAuthorityInit() {
         Role admin = new Role();
         admin.setAuthority("ROLE_ADMIN");
-        grantedAuthorityDao.save(admin);
+        grantedAuthorityDao.saveAndFlush(admin);
 
         Role guest = new Role();
         guest.setAuthority("ROLE_GUEST");
-        grantedAuthorityDao.save(guest);
+        grantedAuthorityDao.saveAndFlush(guest);
 
         Role user = new Role();
         user.setAuthority("ROLE_USER");
-        grantedAuthorityDao.save(user);
+        grantedAuthorityDao.saveAndFlush(user);
+    }
+
+    @Test
+    public void testSpecialUserInit() {
+        User admin = new User();
+        admin.setUsername("ADMIN");
+        admin.setPassword("ADMIN");
+        Role role_admin = grantedAuthorityDao.findByAuthority("ROLE_ADMIN");
+        List<Role> role_admin_list = new ArrayList<Role>();
+        role_admin_list.add(role_admin);
+        admin.setAuthorities(role_admin_list);
+        userDetailsDao.saveAndFlush(admin);
+
+        User user = new User();
+        user.setUsername("USER");
+        user.setPassword("USER");
+        Role role_user = grantedAuthorityDao.findByAuthority("ROLE_USER");
+        List<Role> role_user_list = new ArrayList<Role>();
+        role_user_list.add(role_user);
+        user.setAuthorities(role_user_list);
+        userDetailsDao.saveAndFlush(user);
+
+
+        User guest = new User();
+        guest.setUsername("GUEST");
+        guest.setPassword("GUEST");
+        Role role_guest = grantedAuthorityDao.findByAuthority("ROLE_GUEST");
+        List<Role> role_guest_list = new ArrayList<Role>();
+        role_guest_list.add(role_guest);
+        guest.setAuthorities(role_guest_list);
+        userDetailsDao.saveAndFlush(guest);
     }
 
     @Test

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/hello")
 public class HelloInfo {
@@ -15,7 +17,8 @@ public class HelloInfo {
 
     @RequestMapping("/getHello")
     public String hello() {
-        String result = "The " + SPRING_APPLICATION_NAME + " is running at " + PORT;
+        Date current = new Date();
+        String result = "The " + SPRING_APPLICATION_NAME + " is running at " + PORT + "(" + current + ")";
         return result;
     }
 }
