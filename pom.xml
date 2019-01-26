@@ -20,6 +20,7 @@
         <module>redisServer</module>
         <module>resourceServer_1</module>
         <module>resourceServer_2</module>
+        <module>feignClientServer</module>
     </modules>
 
     <name>sc_20181217</name>

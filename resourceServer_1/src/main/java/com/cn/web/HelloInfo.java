@@ -13,12 +13,12 @@ public class HelloInfo {
     protected String SPRING_APPLICATION_NAME;
 
     @Value("${server.port}")
-    protected String PORT;
+    protected String SERVER_PORT;
 
     @RequestMapping("/getHello")
     public String hello() {
         Date current = new Date();
-        String result = "The " + SPRING_APPLICATION_NAME + " is running at " + PORT + "(" + current + ")";
+        String result = "The " + SPRING_APPLICATION_NAME + " is running at " + SERVER_PORT;
         return result;
     }
 }

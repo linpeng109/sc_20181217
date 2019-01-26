@@ -15,12 +15,20 @@ spring:
       discovery:
         locator:
           enabled: true
-      #          lower-case-service-id: true
+          lower-case-service-id: true
       routes:
         - id: resourceserver_1
           uri: lb://RESOURCESERVERA
           predicates:
             - Path=/resource/**
+            - Weight=resourceserver,60
+          filters:
+            - StripPrefix=1
+        - id: resourceserver_2
+          uri: lb://RESOURCESERVERB
+          predicates:
+            - Path=/resource/**
+            - Weight=resourceserver,40
           filters:
             - StripPrefix=1
 eureka:
@@ -43,5 +51,7 @@ management:
       enabled: true
     restart:
       enabled: true
-    gateway:
-      enabled: true
+logging:
+  level:
+    root: error
+    com.cn: debug
