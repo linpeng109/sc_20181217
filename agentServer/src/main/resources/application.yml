@@ -2,7 +2,7 @@ server:
   port: 8085
 spring:
   application:
-    name: FeignClientServer
+    name: AgentServer
   profiles:
     active: native
   boot:
@@ -31,10 +31,11 @@ management:
       enabled: true
     restart:
       enabled: true
+feign:
+  httpclient:
+    enabled: true
+
 logging:
   level:
     root: error
     com.cn: debug
-feign:
-  httpclient:
-    enabled: true

@@ -13,14 +13,14 @@
         <module>configServer</module>
         <module>gatewayServer</module>
         <module>adminServer</module>
-        <module>userbaseServer</module>
-        <module>schedulerServer</module>
         <module>securityServer</module>
-        <module>amqpServer</module>
-        <module>redisServer</module>
+        <module>agentServer</module>
         <module>resourceServer_1</module>
         <module>resourceServer_2</module>
-        <module>feignClientServer</module>
+        <module>userbaseServer</module>
+        <module>schedulerServer</module>
+        <module>amqpServer</module>
+        <module>redisServer</module>
     </modules>
 
     <name>sc_20181217</name>
