@@ -46,10 +46,12 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.cors().and().csrf().disable()
+
+                .authorizeRequests()
                 .antMatchers("/hello/**", "/actuator/**").permitAll()
                 .antMatchers("/world/**").hasRole("ADMIN")
-                .antMatchers("/linpeng/**").permitAll()
+//                .antMatchers("/linpeng/**").permitAll()
                 .and()
                 .formLogin()
                 .and()

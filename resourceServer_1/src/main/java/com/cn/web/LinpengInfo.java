@@ -8,11 +8,9 @@ import javax.annotation.security.RolesAllowed;
 @RestController
 @RequestMapping("/linpeng")
 public class LinpengInfo {
-
     @RequestMapping("/getLinpeng")
     @RolesAllowed({"ROLE_ADMIN", "ROLE_USER"})
     public String linpeng() {
         return "Hello every one! ";
     }
-
 }
