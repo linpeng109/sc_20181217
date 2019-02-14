@@ -8,6 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface UserBaseDao extends PagingAndSortingRepository<UserBase, String> {
+
     public List<UserBase> findAll();
 
     public Page<UserBase> findAll(Pageable pageable);
