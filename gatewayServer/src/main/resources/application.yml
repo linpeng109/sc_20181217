@@ -17,18 +17,18 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: resourceserver_1
-          uri: lb://RESOURCESERVERA
+        - id: userbaseserver_1
+          uri: lb://USERBASESERVER1
           predicates:
-            - Path=/resource/**
-            - Weight=resourceserver,60
+            - Path=/userbaseserver/**
+            - Weight=userbaseserver,70
           filters:
             - StripPrefix=1
-        - id: resourceserver_2
-          uri: lb://RESOURCESERVERB
+        - id: userbaseserver_2
+          uri: lb://USERBASESERVER2
           predicates:
-            - Path=/resource/**
-            - Weight=resourceserver,40
+            - Path=/userbaseserver/**
+            - Weight=userbaseserver,30
           filters:
             - StripPrefix=1
 eureka:
