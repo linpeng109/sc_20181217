@@ -15,9 +15,8 @@
         <module>adminServer</module>
         <module>securityServer</module>
         <module>agentServer</module>
-        <module>resourceServer_1</module>
-        <module>resourceServer_2</module>
-        <module>userbaseServer</module>
+        <module>userbaseServer_1</module>
+        <module>userbaseServer_2</module>
         <module>schedulerServer</module>
         <module>amqpServer</module>
         <module>redisServer</module>
