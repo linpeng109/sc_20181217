@@ -21,14 +21,14 @@ spring:
           uri: lb://USERBASESERVER1
           predicates:
             - Path=/userbaseserver/**
-            - Weight=userbaseserver,70
+            - Weight=userbaseserver,50
           filters:
             - StripPrefix=1
         - id: userbaseserver_2
           uri: lb://USERBASESERVER2
           predicates:
             - Path=/userbaseserver/**
-            - Weight=userbaseserver,30
+            - Weight=userbaseserver,50
           filters:
             - StripPrefix=1
 eureka:
