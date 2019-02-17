@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "userbase")
 @GenericGenerator(name = "system-uuid", strategy = "uuid")
-public class UserBase {
+public class UserBase implements Serializable {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @Column(name = "userId", length = 32)
