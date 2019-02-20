@@ -67,3 +67,5 @@ logging:
   level:
     root: error
     com.cn: debug
+jwt:
+  signingKey: 123456
