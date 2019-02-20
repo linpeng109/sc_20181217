@@ -24,6 +24,10 @@ public class HelloInfo {
     private String MY_NAME;
 
     @RequestMapping(value = "/getHello", method = RequestMethod.GET)
+<<<<<<< HEAD
+=======
+    @CrossOrigin
+>>>>>>> 35ba398da4208e14daa3df932013a697eeb5d29c
     @ApiOperation(value = "hello函数", notes = "测试配置服务器功能")
     @CrossOrigin
     public String hello() {
