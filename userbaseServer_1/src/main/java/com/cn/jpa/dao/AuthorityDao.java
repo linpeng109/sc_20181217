@@ -9,4 +9,7 @@ public interface AuthorityDao extends Repository<Authority, String> {
     public List<Authority> findAll();
 
     public Authority save(Authority authority);
+
+    public void delete(Authority authority);
+
 }

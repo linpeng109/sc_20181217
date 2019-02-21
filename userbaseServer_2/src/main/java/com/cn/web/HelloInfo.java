@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 @RefreshScope
 @RequestMapping("/helloinfo")
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 public class HelloInfo {
     @Value("${spring.application.name}")
     private String SPRING_APPLICATION_NAME;
@@ -24,7 +25,6 @@ public class HelloInfo {
     private String MY_NAME;
 
     @RequestMapping(value = "/getHello", method = RequestMethod.GET)
-    @CrossOrigin
     @ApiOperation(value = "hello函数", notes = "测试配置服务器功能")
     public String hello() {
         return "The "
