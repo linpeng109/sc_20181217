@@ -3,6 +3,7 @@ package com.cn.web.service;
 import com.cn.jpa.dao.UserBaseDao;
 import com.cn.jpa.entity.UserBase;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Service
 @EnableCaching
+@CacheConfig()
 public class UserBaseService {
     @Autowired
     public UserBaseDao userBaseDao;
