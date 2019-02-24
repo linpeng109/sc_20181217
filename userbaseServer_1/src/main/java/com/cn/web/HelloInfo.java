@@ -31,6 +31,6 @@ public class HelloInfo {
         return "The "
                 + SPRING_APPLICATION_NAME
                 + " is run at " + SERVER_PORT
-                + ". My name is " + MY_NAME;
+                + ". My name is  " + MY_NAME;
     }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 public interface GrantedAuthorityDao extends JpaRepository<Role, String> {
     public Role save(Role role);
 
+    public void delete(Role role);
+
     public Role findByAuthority(String authorityString);
 
     public List<Role> findAll();

@@ -21,6 +21,17 @@ spring:
     show-sql: true
   main:
     allow-bean-definition-overriding: true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 3000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
 eureka:
   instance:
     prefer-ip-address: true
