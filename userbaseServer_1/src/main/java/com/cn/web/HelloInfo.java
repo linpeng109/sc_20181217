@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 @RefreshScope
 @RequestMapping("/helloinfo")
-<<<<<<< HEAD
-=======
-@CrossOrigin(origins = "*",allowedHeaders = "*")
->>>>>>> 35ba398da4208e14daa3df932013a697eeb5d29c
+@CrossOrigin(origins = "*",allowedHeaders = "*",maxAge = 3600)
 public class HelloInfo {
     @Value("${spring.application.name}")
     private String SPRING_APPLICATION_NAME;

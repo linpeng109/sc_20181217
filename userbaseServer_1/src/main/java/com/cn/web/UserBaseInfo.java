@@ -8,12 +8,10 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
@@ -21,6 +19,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/userbaseinfo")
+@CrossOrigin(origins = "*",allowedHeaders = "*",maxAge = 3600)
 public class UserBaseInfo {
     @Autowired
     public UserBaseService userBaseService;
@@ -45,10 +44,12 @@ public class UserBaseInfo {
     @RequestMapping("/init/{num}")
     @ApiIgnore
     public String init(@PathVariable(name = "num") int num) {
-        List<Authority> authorityList = authorityService.findAll();
-        for (int i = 0; i < num; ++i) {
+        List<Authority> authorityList;
+        authorityList = authorityService.findAll();
+        for (int i = 0b0; i < num; ++i) {
             String uuid = UUID.randomUUID().toString().substring(0, 7);
-            UserBase userBase = new UserBase();
+            UserBase userBase;
+            userBase = new UserBase();
             userBase.username = uuid;
             userBase.password = uuid;
             userBase.authorityList = authorityList;

@@ -4,6 +4,7 @@ import com.cn.jpa.entity.Authority;
 import com.cn.web.service.AuthorityService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/authorityinfo")
+@CrossOrigin(origins = "*",allowedHeaders = "*",maxAge = 3600)
 public class AuthorityInfo {
     @Autowired
     public AuthorityService authorityService;

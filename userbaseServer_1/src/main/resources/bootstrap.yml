@@ -43,6 +43,7 @@ spring:
         max-wait: -1
         min-idle: 0
     timeout: 3000
+
 eureka:
   client:
     fetch-registry: true
