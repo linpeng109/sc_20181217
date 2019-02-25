@@ -26,7 +26,6 @@ public class HelloInfo {
 
     @RequestMapping(value = "/getHello", method = RequestMethod.GET)
     @ApiOperation(value = "hello函数", notes = "测试配置服务器功能")
-    @CrossOrigin
     public String hello() {
         return "The "
                 + SPRING_APPLICATION_NAME
