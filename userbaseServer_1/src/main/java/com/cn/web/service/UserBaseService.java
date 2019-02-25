@@ -15,7 +15,6 @@ import java.util.List;
 
 @Service
 @EnableCaching
-@CacheConfig()
 public class UserBaseService {
     @Autowired
     public UserBaseDao userBaseDao;

@@ -51,6 +51,11 @@ spring:
         min-idle: 0
         max-wait: -1
       timeout: 3000
+  cache:
+    type: redis
+    redis:
+      time-to-live: 30000
+    cache-names: userbaseServerCache
 eureka:
   client:
     fetch-registry: true
