@@ -43,6 +43,11 @@ spring:
         max-wait: -1
         min-idle: 0
     timeout: 3000
+  cache:
+    type: redis
+    redis:
+      time-to-live: 30000
+    cache-names: userbaseServerCache
   devtools:
     restart:
       enabled: true
@@ -50,11 +55,6 @@ spring:
     livereload:
       enabled: true
       port: 35729
-  cache:
-    type: redis
-    redis:
-      time-to-live: 30000
-    cache-names: userbaseServerCache
 eureka:
   client:
     fetch-registry: true

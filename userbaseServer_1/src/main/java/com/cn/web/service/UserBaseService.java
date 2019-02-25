@@ -14,32 +14,32 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@EnableCaching
+@CacheConfig(cacheNames = "userbaseserverCache")
 public class UserBaseService {
     @Autowired
     public UserBaseDao userBaseDao;
 
-    @Cacheable(value = "userbaseCache")
+    @Cacheable
     public List<UserBase> findAll() {
         return userBaseDao.findAll();
     }
 
-    @Cacheable(value = "userbaseCache")
+    @Cacheable
     public Page<UserBase> findAll(Pageable pageable) {
         return userBaseDao.findAll(pageable);
     }
 
-    @CacheEvict(value = "userbaseCache",allEntries = true)
+    @CacheEvict(allEntries = true)
     public UserBase save(UserBase userBase) {
         return userBaseDao.save(userBase);
     }
 
-    @CacheEvict(value = "userbaseCache",allEntries = true)
+    @CacheEvict(allEntries = true)
     public void delete(UserBase userBase) {
         userBaseDao.delete(userBase);
     }
 
-    @Cacheable(value = "userbaseCache")
+    @Cacheable
     public long count() {
         return userBaseDao.count();
     }

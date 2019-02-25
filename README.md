@@ -8,4 +8,7 @@ http://patorjk.com/software/taag/
 devtools:
 增加热部署功能
 
+20190225
+共享Redis Cache
+
 

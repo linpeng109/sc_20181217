@@ -32,6 +32,16 @@ spring:
         max-idle: 8
         min-idle: 0
         max-wait: -1
+  devtools:
+    restart:
+      additional-paths: src/main
+      enabled: true
+    livereload:
+      enabled: true
+      port: 35729
+  cache:
+    redis:
+      time-to-live: 30000
 eureka:
   instance:
     prefer-ip-address: true
