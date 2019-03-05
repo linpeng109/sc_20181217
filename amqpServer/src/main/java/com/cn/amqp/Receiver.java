@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Log4j2
-@RabbitListener(queues = "hello")
 public class Receiver {
+    @RabbitListener(queues = "hello")
     @RabbitHandler
     public void reciveMsg(String message) {
         log.debug("receive message: " + message);

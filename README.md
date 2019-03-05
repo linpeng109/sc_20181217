@@ -9,6 +9,9 @@ devtools:
 增加热部署功能
 
 20190225
-共享Redis Cache
+共享JPA+Redis Cache,对系统性能提升显著
+
+20190226
+
 
 
