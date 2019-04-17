@@ -14,6 +14,12 @@ spring:
     restart:
       enabled: true
       additional-paths: src/main
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
 eureka:
   client:
     fetch-registry: true
