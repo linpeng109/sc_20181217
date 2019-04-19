@@ -16,5 +16,8 @@ devtools:
 20190417 
 增加ElasticSearch支持
 
+20190419
+增加Kafka支持
+
 
 

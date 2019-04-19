@@ -28,6 +28,7 @@
         <module>amqpServer</module>
         <module>redisServer</module>
         <module>elasticServer</module>
+        <module>kafkaServer</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
