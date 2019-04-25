@@ -38,7 +38,7 @@ public class UserBaseService {
         userBaseDao.delete(userBase);
     }
 
-    @Cacheable(value = "userBaseCache")
+    @Cacheable
     public long count() {
         return userBaseDao.count();
     }
