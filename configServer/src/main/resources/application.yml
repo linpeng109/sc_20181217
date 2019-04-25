@@ -8,8 +8,14 @@ spring:
       server:
         git:
           uri: https://github.com/linpeng109/config-repo
-  #        native:
-  #          search-locations: classpath:/shared
+          #        native:
+          #          search-locations: classpath:/shared
+    bus:
+      refresh:
+        enabled: true
+      enabled: true
+      trace:
+        enabled: true
   boot:
     admin:
       client:
