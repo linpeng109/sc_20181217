@@ -16,6 +16,8 @@ spring:
       enabled: true
       trace:
         enabled: true
+  rabbitmq:
+    host: 
   boot:
     admin:
       client:
@@ -26,6 +28,8 @@ management:
       exposure:
         include: "*"
   endpoint:
+    bus-refresh:
+      enabled: true
     shutdown:
       enabled: true
     health:
