@@ -5,14 +5,15 @@ spring:
     name: ConfigServer
   cloud:
     config:
+      fail-fast: true
       server:
         git:
           uri: https://github.com/linpeng109/config-repo
-  #        native:
-  #          search-locations: classpath:/shared
   rabbitmq:
-    host: localhost
+    host: 192.168.0.18
     port: 5672
+    username: user
+    password: user
   boot:
     admin:
       client:
