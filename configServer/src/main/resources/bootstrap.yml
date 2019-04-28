@@ -11,7 +11,7 @@ spring:
   #        native:
   #          search-locations: classpath:/shared
   rabbitmq:
-    host: 192.168.0.110
+    host: 192.168.0.18
     port: 5672
   boot:
     admin:
@@ -36,7 +36,7 @@ eureka:
     service-url:
       fetch-registry: true
       register-with-eureka: true
-      defaultZone: http://192.168.0.110:8761/eureka
+      defaultZone: http://192.168.0.18:8761/eureka
   instance:
     prefer-ip-address: true
 logging:
