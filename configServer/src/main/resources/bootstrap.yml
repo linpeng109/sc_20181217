@@ -5,7 +5,7 @@ spring:
     name: ConfigServer
   cloud:
     config:
-      fail-fast: true
+#      fail-fast: true
       server:
         git:
           uri: https://github.com/linpeng109/config-repo
@@ -22,7 +22,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: *
   endpoint:
     bus-refresh:
       enabled: true
