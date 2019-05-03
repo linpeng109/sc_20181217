@@ -23,15 +23,10 @@ spring:
         enabled: true
   cloud:
     config:
+      name: UserbaseServer
+      profile: dev
       discovery:
         service-id: CONFIGSERVER
-        enabled: true
-      name: UserbaseServer
-      label: master
-      profile: dev
-      fail-fast: true
-    bus:
-      refresh:
         enabled: true
   rabbitmq:
     host: 192.168.0.18
