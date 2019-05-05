@@ -10,7 +10,7 @@ spring:
         git:
           uri: https://github.com/linpeng109/sc_20181217/config-repo
   rabbitmq:
-    host: 192.168.0.18
+    host: localhost
     port: 5672
     username: user
     password: user
@@ -37,7 +37,7 @@ eureka:
     service-url:
       fetch-registry: true
       register-with-eureka: true
-      defaultZone: http://192.168.0.18:8761/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
 logging:
