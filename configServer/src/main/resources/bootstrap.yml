@@ -8,7 +8,7 @@ spring:
       fail-fast: true
       server:
         git:
-          uri: https://github.com/linpeng109/config-repo
+          uri: https://github.com/linpeng109/sc_20181217/config-repo
   rabbitmq:
     host: 192.168.0.18
     port: 5672
