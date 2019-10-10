@@ -16,6 +16,7 @@
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
+<!--            <artifactId>spring-boot-admin-starter-client</artifactId>-->
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
         <dependency>
